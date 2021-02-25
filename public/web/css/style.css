@@ -2123,7 +2123,7 @@ h6 .badge {
     left: 0;
     width: 100%;
     height: 115px;
-    background-color: #6777ef;
+    background-color: #ff9f0d;
     z-index: -1;
 }
 
@@ -3888,7 +3888,7 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li.active a {
-    color: #6777ef;
+    color: #ff9f0d;
     font-weight: 600;
     background-color: #f8fafb;
 }
@@ -3936,12 +3936,12 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
-    color: #6777ef;
+    color: #ff9f0d;
     background-color: inherit;
 }
 
 .main-sidebar .sidebar-menu li ul.dropdown-menu li.active > a {
-    color: #6777ef;
+    color: #ff9f0d;
     font-weight: 600;
 }
 
