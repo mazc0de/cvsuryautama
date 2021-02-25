@@ -26,15 +26,15 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Email:</label><span
+                            <label for="username">Username:</label><span
                                     class="text-danger">*</span>
-                            <input id="email" type="email"
-                                   class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                   placeholder="Enter Email address" name="email" tabindex="1"
-                                   value="{{ old('email') }}"
+                            <input id="username" type="username"
+                                   class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}"
+                                   placeholder="Enter username" name="username" tabindex="1"
+                                   value="{{ old('username') }}"
                                    required autofocus>
                             <div class="invalid-feedback">
-                                {{ $errors->first('email') }}
+                                {{ $errors->first('username') }}
                             </div>
                         </div>
                     </div>

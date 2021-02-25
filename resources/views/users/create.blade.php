@@ -28,7 +28,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Email</label>
+                                    <label>Username</label>
                                     <input type="username" class="form-control" placeholder="username" name="username" value="{{old('username')}}">
                                     @error('username')
                                         <div class="mt-2 text-danger">{{ $message }}</div>

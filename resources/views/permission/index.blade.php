@@ -18,26 +18,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        @if (session('success'))
-                        <div class="alert alert-success alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>×</span>
-                                </button>
-                                {{session('success')}}
-                            </div>
-                            </div>
-                        @endif
-                        @if (session('delete'))
-                        <div class="alert alert-danger alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>×</span>
-                                </button>
-                                {{session('delete')}}
-                            </div>
-                            </div>
-                        @endif
+                        @include('alert')
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -57,7 +38,11 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('permission.edit', $permission)}}" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="{{ route('permission.delete', $permission)}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger">Delete</a>
+                                        <button class="btn btn-sm btn-danger trigger--fire-modal-7"
+                                                data-confirm="Konfirmasi|Apakah anda yakin akan menghapus permission <b>{{$permission->name}}</b>?"
+                                                data-confirm-yes="window.location.href='{{ route('permission.delete', $permission)}}'">
+                                                Delete
+                                            </button>
                                     </td>
                                 </tr>
                                 @endforeach

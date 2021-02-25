@@ -18,26 +18,7 @@
                         {{-- @endcan --}}
                     </div>
                     <div class="card-body">
-                        @if (session('success'))
-                        <div class="alert alert-success alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>×</span>
-                                </button>
-                                {{session('success')}}
-                            </div>
-                            </div>
-                        @endif
-                        @if (session('delete'))
-                        <div class="alert alert-danger alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>×</span>
-                                </button>
-                                {{session('delete')}}
-                            </div>
-                            </div>
-                        @endif
+                        @include('alert')
                         <table class="table table-striped">
                             <thead>
                                 <tr class="tabhead">
@@ -63,7 +44,11 @@
                                                 <a href="{{ route('roles.edit',$role)}}" class="btn btn-sm btn-primary" >Edit</a>
                                             @endcan
                                             @can('role-delete')
-                                                <a href="{{route('roles.delete',$role)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                            <button class="btn btn-sm btn-danger trigger--fire-modal-7"
+                                                data-confirm="Konfirmasi|Apakah anda yakin akan menghapus role <b>{{$role->name}}</b>?"
+                                                data-confirm-yes="window.location.href='{{route('roles.delete',$role)}}'">
+                                                Delete
+                                            </button>
                                             @endcan
                                         </td>
                                     </tr>

@@ -19,14 +19,15 @@
                     </div>
                 @endif
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input aria-describedby="emailHelpBlock" id="email" type="email"
-                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                           placeholder="Enter Email" tabindex="1"
-                           value="{{ (Cookie::get('email') !== null) ? Cookie::get('email') : old('email') }}" autofocus
-                           required>
+                    <label for="username">Username:</label><span
+                            class="text-danger">*</span>
+                    <input id="username" type="username"
+                           class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}"
+                           placeholder="Enter username" name="username" tabindex="1"
+                           value="{{ old('username') }}"
+                           required autofocus>
                     <div class="invalid-feedback">
-                        {{ $errors->first('email') }}
+                        {{ $errors->first('username') }}
                     </div>
                 </div>
 
@@ -46,14 +47,6 @@
                            tabindex="2" required>
                     <div class="invalid-feedback">
                         {{ $errors->first('password') }}
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" name="remember" class="custom-control-input" tabindex="3"
-                               id="remember"{{ (Cookie::get('remember') !== null) ? 'checked' : '' }}>
-                        <label class="custom-control-label" for="remember">Remember Me</label>
                     </div>
                 </div>
 
