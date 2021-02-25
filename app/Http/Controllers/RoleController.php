@@ -43,7 +43,7 @@ class RoleController extends Controller
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('roles.index')->with('success', 'Role berhasil ditambahkan!');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil ditambah!');
     }
 
     public function show($id)
@@ -77,14 +77,14 @@ class RoleController extends Controller
 
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('roles.index')->with('success', 'Role berhasil di edit');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil diedit!');
     }
 
     public function destroy($id)
     {
         $roles = Role::find($id);
         $roles->delete();
-        return redirect()->route('roles.index')->with('delete', 'Role berhasil di hapus');
+        return redirect()->route('roles.index')->with('delete', 'Role berhasil dihapus!');
 
     }
 }
