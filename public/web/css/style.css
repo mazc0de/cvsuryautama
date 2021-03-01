@@ -3533,7 +3533,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li > a:focus
 body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a,
 body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a:hover {
     color: #fff;
-    background-color: #6777ef !important;
+    background-color: #ff9f0d !important;
 }
 
 body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li a {
