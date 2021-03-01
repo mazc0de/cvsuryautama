@@ -17,3 +17,16 @@
         </li>
     </ul>
 </li>
+
+<li class="side-menus">
+    <a class="nav-link" href="{{route('home')}}">
+        <i class=" fas fa-folder-open"></i><span>Laporan</span>
+    </a>
+</li>
+
+<li class="side-menus trigger--fire-modal-1" data-confirm="Konfirmasi|Apakah anda yakin akan logout?"
+    data-confirm-yes="window.location.href='{{route('logout')}}'">
+    <a class="nav-link text-danger" href="#">
+        <i class=" fas fa-power-off"></i><span>Logout</span>
+    </a>
+</li>
