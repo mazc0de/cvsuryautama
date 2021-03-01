@@ -8,12 +8,17 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    <link href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/datatables.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('select.bootstrap4.min.css') }}" rel="stylesheet" type="text/css"/>
+
     <!-- Ionicons -->
     <link href="//fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="{{ asset('assets/css/@fortawesome/fontawesome-free/css/all.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}">
-    <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}"> --}}
+    {{-- <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/> --}}
+    {{-- <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/> --}}
 @yield('page_css')
 <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
@@ -53,10 +58,15 @@
 {{-- <script src="{{ asset('assets/js/modal.js') }}"></script> --}}
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
-<script src="{{ asset('assets/js/iziToast.min.js') }}"></script>
-<script src="{{ asset('assets/js/select2.min.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/sweetalert.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/js/iziToast.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/js/select2.min.js') }}"></script> --}}
 <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+
+<script src="{{ asset('assets/js/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('assets/js/dataTables.select.min.js') }}"></script>
+<script src="{{ asset('assets/js/modules-datatables.js') }}"></script>
 
 <!-- Template JS File -->
 <script src="{{ asset('web/js/stisla.js') }}"></script>
