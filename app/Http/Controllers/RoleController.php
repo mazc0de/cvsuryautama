@@ -22,14 +22,14 @@ class RoleController extends Controller
     {
         $title = "Daftar Role";
         $roles = Role::orderBy('id', 'ASC')->paginate(5);
-        return view('roles.index', compact('title', 'roles'));
+        return view('admin.roles.index', compact('title', 'roles'));
     }
 
     public function create()
     {
         $title = "Tambah Role";
         $permissions = Permission::get();
-        return view('roles.create', compact('title', 'permissions'));
+        return view('admin.roles.create', compact('title', 'permissions'));
     }
 
     public function store(Request $request)
@@ -60,7 +60,7 @@ class RoleController extends Controller
         $rolePermission = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$id)
         ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')->all();
 
-        return view('roles.edit', compact('title', 'role', 'permission', 'rolePermission'));
+        return view('admin.roles.edit', compact('title', 'role', 'permission', 'rolePermission'));
     }
 
     public function update(Request $request, $id)
