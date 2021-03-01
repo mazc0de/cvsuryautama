@@ -10,12 +10,13 @@ class PermissionController extends Controller
     public function index(){
         $title = "Daftar Permission";
         $permissions = Permission::all();
-        return view('permission.index', compact('title','permissions'));
+        return view('admin.permission.index', compact('title','permissions'));
     }
 
     public function create(){
         $title = "Tambah Permission";
-        return view('permission.create', compact('title'));
+        $permission = new Permission();
+        return view('admin.permission.create', compact('title','permission'));
     }
 
     public function store(Request $request){
@@ -32,7 +33,7 @@ class PermissionController extends Controller
     public function edit($id){
         $title = "Edit Permission";
         $permission = Permission::find($id);
-        return view('permission.edit', compact('title','permission'));
+        return view('admin.permission.edit', compact('title','permission'));
     }
 
     public function update(Request $request, $id){
