@@ -7,29 +7,29 @@
     </div>
     <div class="section-body">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-12">
+                @include('alert')
                 <div class="card">
                     <div class="card-header">
                         <h4></h4>
-                        {{-- @can('role-create') --}}
-                            <div class="card-header-action">
-                                <a href="{{ route('roles.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Role</a>
-                            </div>
-                        {{-- @endcan --}}
+                        <div class="card-header-action">
+                            <a href="{{ route('roles.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Role</a>
+
+                        </div>
                     </div>
                     <div class="card-body">
-                        @include('alert')
-                        <table class="table table-striped">
-                            <thead>
-                                <tr class="tabhead">
-                                    <th scope="col">#</th>
-                                    <th scope="col">Role Name</th>
-                                    <th scope="col">Permission</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($roles as $role)
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table-1">
+                                <thead>
+                                    <tr class="tabhead">
+                                        <th scope="col">#</th>
+                                        <th scope="col">Role Name</th>
+                                        <th scope="col">Permission</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($roles as $role)
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $role->name }}</td>
@@ -52,8 +52,9 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
