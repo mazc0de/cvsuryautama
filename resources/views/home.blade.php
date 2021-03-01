@@ -11,10 +11,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="col-12 mb-4">
-                                <div class="hero text-white hero-bg-image hero-bg-parallax" style="background-image: url({{asset('img/profile.png')}});">
+                                <div class="hero text-white hero-bg-image hero-bg-parallax" style="background-image: url({{asset('img/profile.png')}}); height:300px">
                                   <div class="hero-inner">
-                                    <h2>Welcome back!</h2>
-                                    <p class="lead">You're logged as</p>
+                                    <h2>Welcome back, {{auth()->user()->name}} !</h2>
+                                    <p class="lead">You're logged as {{auth()->user()->getRoleNames()->implode(', ')}}</p>
                                     <div class="mt-4">
                                       <a href="#" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i> Setup Account</a>
                                     </div>
