@@ -20,20 +20,22 @@ class UserController extends Controller
         $this->middleware('permission:role-edit',['only' => ['edit','update']]);
         $this->middleware('permission:role-delete',['only' => ['destroy']]);
     }
-    
+
     public function index()
     {
         $title = "Daftar User";
         $users = User::orderBy('id','ASC')->paginate(10);
 
-        return view('users.index', compact('title','users'));
+        return view('admin.users.index', compact('title','users'));
     }
 
     public function create()
     {
         $title = 'Tambah Pengguna';
+        $user = new User();
         $roles = Role::all();
-        return view('users.create', compact('title', 'roles'));
+
+        return view('admin.users.create', compact('title', 'roles', 'user'));
     }
 
     public function store(Request $request)
@@ -58,7 +60,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('users.show', compact('user'));
+        return view('admin.users.show', compact('user'));
     }
 
     public function edit($id)
@@ -68,7 +70,7 @@ class UserController extends Controller
         $roles = Role::pluck('name','id')->all();
         $userRole = $user->roles->pluck('id')->all();
         // $userRole = $user->roles->pluck('id')->all();
-        return view('users.edit', compact('title','user','roles', 'userRole'));
+        return view('admin.users.edit', compact('title','user','roles', 'userRole'));
     }
 
     public function update(Request $request, $id)
@@ -80,7 +82,7 @@ class UserController extends Controller
             'password' => 'same:password_confirmation',
             'roles' => 'required'
         ]);
-        
+
         $data = $request->all();
         if(!empty($data['password'])){
             $data['password'] = Hash::make($data['password']);
@@ -93,7 +95,7 @@ class UserController extends Controller
 
         DB::table('model_has_roles')->where('model_id', $id)->delete();
         $user->assignRole($request->input('roles'));
-        
+
         return redirect()->route('users.index')->with('success', 'User berhasil diedit!');
 
     }
@@ -102,6 +104,5 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')->with('delete','User berhasil dihapus!');
-
     }
 }
