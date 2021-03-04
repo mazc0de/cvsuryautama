@@ -2,81 +2,75 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Laporan;
+use Hamcrest\Core\HasToString;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LaporanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $title = "Laporan Harian";
+        $getRoles = auth()->user()->getRoleNames();
+        // dd($getRoles);
+        if($getRoles[0] == "Super Admin"){
+            $laporan = Laporan::all();
+        }
+        else{
+            $user = auth()->user()->id;
+            $laporan = Laporan::where('user_id', $user)->get();
+        }
+
+        return view('admin.laporan.index', compact('title','laporan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $title = "Buat Laporan";
+        // $user = auth()->user()->id;
+        return view('admin.laporan.create', compact('title'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'date' => 'required',
+            'upload' => request('upload') ? 'required|mimes:pdf,xls,xlsx':'',
+        ]);
+
+        $title = $request->file('upload')->getClientOriginalName();
+
+        $userid = auth()->user()->id;
+        // dd($userid);
+        Laporan::create([
+            'title' => $title,
+            'date' => request('date'),
+            'uploads' => $request->file('upload')->storeAs('files/laporan', $title),
+            'user_id' => $userid,
+        ]);
+
+
+        return redirect()->route('laporan.index')->with('success', 'File berhasil diupload!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
