@@ -13,9 +13,10 @@
 @endpush
 
 @section('content')
+
 <section class="section">
     <div class="section-header pt-3 pb-1">
-        <h3 class="page__heading">Roles</h3>
+        <h3 class="page__heading">{{$title}}</h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -27,7 +28,7 @@
                     <div class="card-header">
                         <h4></h4>
                         <div class="card-header-action">
-                            <a href="{{ route('roles.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Role</a>
+                            <a href="{{ route('laporan.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Laporan</a>
 
                         </div>
                     </div>
@@ -37,42 +38,32 @@
                                 <thead>
                                     <tr class="tabhead">
                                         <th scope="col">#</th>
-                                        <th scope="col">Role Name</th>
-                                        <th scope="col">Permission</th>
+                                        @role("Super Admin")
+                                        <th scope="col">Diupload oleh</th>
+                                        @endrole
+                                        <th scope="col">File Name</th>
+                                        <th scope="col">Date</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($roles as $role)
+                                    @foreach ($laporan as $item)
                                     <tr>
-                                        <th scope="row">{{ $loop->iteration }}</th>
-                                        <td>{{ $role->name }}</td>
-                                        <td>
-                                            @foreach ($role->permissions as $permission)
-                                                <span class="badge badge-info mt-1"><i class="fas fa-shield-alt"></i> {{ $permission->name }}</span>
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            @can('role-edit')
-                                                <a href="{{ route('roles.edit',$role)}}" class="btn btn-sm btn-primary" >Edit</a>
-                                            @endcan
-                                            @can('role-delete')
-                                            <button class="btn btn-sm btn-danger trigger--fire-modal-7"
-                                                data-confirm="Konfirmasi|Apakah anda yakin akan menghapus role <b>{{$role->name}}</b>?"
-                                                data-confirm-yes="window.location.href='{{route('roles.delete',$role)}}'">
-                                                Delete
-                                            </button>
-                                            @endcan
-                                        </td>
+                                        <td>{{$loop->iteration}}</td>
+                                        @role("Super Admin")
+                                        <td>{{$item->user->name}}</td>
+                                        @endrole
+                                        <td>{{$item->title}}</td>
+                                        <td>{{$item->date}}</td>
+                                        <td>ok</td>
                                     </tr>
-                                @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="col-1"></div>
 
         </div>

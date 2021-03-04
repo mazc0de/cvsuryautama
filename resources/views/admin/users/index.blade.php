@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@push('datatables-css')
+    <link href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/datatables.min.css') }}" rel="stylesheet" type="text/css"/>
+@endpush
+
+@push('datatables-js')
+    <script src="{{ asset('assets/js/datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/dataTables.select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/modules-datatables.js') }}"></script>
+@endpush
+
 @section('content')
 <section class="section">
     <div class="section-header pt-3 pb-1">
@@ -7,7 +19,8 @@
     </div>
     <div class="section-body">
         <div class="row">
-            <div class="col-12">
+            <div class="col-1"></div>
+            <div class="col-10">
                 @include('alert')
                 <div class="card">
                     <div class="card-header">
@@ -60,6 +73,8 @@
                     </div>
                 </div>
             </div>
+            <div class="col-1"></div>
+
         </div>
     </div>
 </section>

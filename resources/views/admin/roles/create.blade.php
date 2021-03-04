@@ -7,7 +7,10 @@
     </div>
     <div class="section-body">
         <div class="row">
-            <div class="col-lg-12">
+
+            <div class="col-1"></div>
+
+            <div class="col-lg-10">
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header">
@@ -28,6 +31,9 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-1"></div>
+
         </div>
     </div>
 </section>
