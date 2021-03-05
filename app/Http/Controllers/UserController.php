@@ -21,6 +21,11 @@ class UserController extends Controller
         $this->middleware('permission:role-delete',['only' => ['destroy']]);
     }
 
+    public function dashboard(){
+        $title = "Dashboard";
+        return view('admin.dashboard.index', compact('title'));
+    }
+
     public function index()
     {
         $title = "Daftar User";
