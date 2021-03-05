@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Laporan;
-use Hamcrest\Core\HasToString;
 use Illuminate\Http\Request;
+use Hamcrest\Core\HasToString;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
 class LaporanController extends Controller
@@ -74,5 +75,16 @@ class LaporanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function download($title)
+    {
+        $laporan = Laporan::find($title);
+        try{
+            // return Storage::disk('local')->download('files/laporan/'.$request->file);
+            return Storage::download('files/laporan/'.$title);
+        }catch(\Exception $e){
+            return $e->getMessage();
+        }
     }
 }
