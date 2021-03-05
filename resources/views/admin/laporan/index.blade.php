@@ -55,7 +55,9 @@
                                         @endrole
                                         <td>{{$item->title}}</td>
                                         <td>{{$item->date}}</td>
-                                        <td>ok</td>
+                                        <td>
+                                            <a href="{{route('laporan.download', $item)}}" class="btn btn-sm btn-success">Download</a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
