@@ -1,8 +1,10 @@
-<li class="side-menus {{Route::currentRouteNamed('home') ? 'active' : ''}}">
-    <a class="nav-link" href="{{route('home')}}">
+<li class="side-menus {{Route::currentRouteNamed('dashboard') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('dashboard')}}">
         <i class=" fas fa-building"></i><span>Dashboard</span>
     </a>
 </li>
+
+@role('Super Admin')
 <li class="nav-item dropdown {{ Route::currentRouteNamed('users.*') ? 'active' : ''}}">
     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user-cog"></i> <span>User Management</span></a>
     <ul class="dropdown-menu" style="display: none;">
@@ -17,9 +19,10 @@
         </li>
     </ul>
 </li>
+@endrole
 
-<li class="side-menus">
-    <a class="nav-link" href="{{route('home')}}">
+<li class="side-menusm {{ Route::currentRouteNamed('laporan.*') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('laporan.index')}}">
         <i class=" fas fa-folder-open"></i><span>Laporan</span>
     </a>
 </li>
