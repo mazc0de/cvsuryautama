@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Models\Laporan;
 use App\Models\User;
 
 /*
@@ -18,18 +20,20 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function(){
     Route::prefix('admin')->group(function(){
+        Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
         Route::prefix('users')->group(function(){
             Route::get('/', [UserController::class, 'index'])->name('users.index');
             Route::get('create', [UserController::class, 'create'])->name('users.create');
@@ -55,6 +59,13 @@ Route::middleware('auth')->group(function(){
             Route::get('edit/{permission:id}', [PermissionController::class, 'edit'])->name('permission.edit');
             Route::put('edit/{permission:id}', [PermissionController::class, 'update']);
             Route::get('delete/{permission:id}', [PermissionController::class, 'destroy'])->name('permission.delete');
+        });
+
+        Route::prefix('laporan')->group(function(){
+            Route::get('/', [LaporanController::class, 'index'])->name('laporan.index');
+            Route::get('create', [LaporanController::class, 'create'])->name('laporan.create');
+            Route::post('create', [LaporanController::class, 'store']);
+            Route::get('download/{item:title}', [LaporanController::class, 'download'])->name('laporan.download');
         });
     });
 });
