@@ -26,6 +26,19 @@
         <i class=" fas fa-folder-open"></i><span>Laporan</span>
     </a>
 </li>
+@role('Super Admin')
+<li class="side-menus {{ Route::currentRouteNamed('help.index') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('help.index')}}">
+        <i class="fas fa-info-circle"></i><span>Daftar Helpdesk</span>
+    </a>
+</li>
+@endrole
+
+<li class="side-menus {{ Route::currentRouteNamed('help.submit') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('help.submit')}}">
+        <i class="fas fa-info-circle"></i><span>Helpdesk</span>
+    </a>
+</li>
 
 <li class="side-menus trigger--fire-modal-1" data-confirm="Konfirmasi|Apakah anda yakin akan logout?"
     data-confirm-yes="window.location.href='{{route('logout')}}'">
