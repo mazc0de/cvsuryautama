@@ -57,26 +57,6 @@ class LaporanController extends Controller
         return redirect()->route('laporan.index')->with('success', 'File berhasil diupload!');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
-
     public function download($title)
     {
         $laporan = Laporan::find($title);
