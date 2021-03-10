@@ -1,14 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\LaporanController;
-use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\{UserController,HelpController,LaporanController,PermissionController,RoleController};
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Models\Laporan;
-use App\Models\User;
-
+use App\Models\{User, Laporan};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +61,12 @@ Route::middleware('auth')->group(function(){
             Route::get('create', [LaporanController::class, 'create'])->name('laporan.create');
             Route::post('create', [LaporanController::class, 'store']);
             Route::get('download/{item:title}', [LaporanController::class, 'download'])->name('laporan.download');
+        });
+
+        Route::prefix('help')->group(function(){
+            Route::get('index', [HelpController::class, 'index'])->name('help.index');
+            Route::get('submit', [HelpController::class, 'submit'])->name('help.submit');
+            Route::post('submit', [HelpController::class, 'store']);
         });
     });
 });
