@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function laporan(){
         return $this->hasMany(Laporan::class);
     }
+
+    public function helpdesk(){
+        return $this->hasMany(Helpdesk::class);
+    }
 }
