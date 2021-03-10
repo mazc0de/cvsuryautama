@@ -3,8 +3,8 @@
     Admin Login
 @endsection
 @section('content')
-    <div class="card card-primary">
-        <div class="card-header"><h4>Admin Login</h4></div>
+    <div class="card card-warning">
+        <div class="card-header "><h4 class="text-warning">Admin Login</h4></div>
 
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
@@ -35,7 +35,7 @@
                     <div class="d-block">
                         <label for="password" class="control-label">Password</label>
                         <div class="float-right">
-                            <a href="{{ route('password.request') }}" class="text-small">
+                            <a href="{{ route('password.request') }}" class="text-small text-warning">
                                 Forgot Password?
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                    <button type="submit" class="btn btn-warning btn-lg btn-block" tabindex="4">
                         Login
                     </button>
                 </div>
