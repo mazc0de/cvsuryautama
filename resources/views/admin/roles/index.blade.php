@@ -15,7 +15,7 @@
 @section('content')
 <section class="section">
     <div class="section-header pt-3 pb-1">
-        <h3 class="page__heading">Roles</h3>
+        <h3 class="page__heading">{{$title}}</h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -47,19 +47,20 @@
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $role->name }}</td>
-                                        <td>
+                                        <td >
                                             @foreach ($role->permissions as $permission)
                                                 <span class="badge badge-info mt-1"><i class="fas fa-shield-alt"></i> {{ $permission->name }}</span>
                                             @endforeach
                                         </td>
                                         <td>
                                             @can('role-edit')
-                                                <a href="{{ route('roles.edit',$role)}}" class="btn btn-sm btn-primary" >Edit</a>
+                                                <a href="{{ route('roles.edit',$role)}}" class="btn btn-sm btn-info" ><i class="fas fa-edit"></i> Edit</a>
                                             @endcan
                                             @can('role-delete')
                                             <button class="btn btn-sm btn-danger trigger--fire-modal-7"
                                                 data-confirm="Konfirmasi|Apakah anda yakin akan menghapus role <b>{{$role->name}}</b>?"
                                                 data-confirm-yes="window.location.href='{{route('roles.delete',$role)}}'">
+                                                <i class="fas fa-trash-alt"></i>
                                                 Delete
                                             </button>
                                             @endcan

@@ -56,7 +56,8 @@
                                         <td>{{$item->title}}</td>
                                         <td>{{$item->date}}</td>
                                         <td>
-                                            <a href="{{route('laporan.download', $item)}}" class="btn btn-sm btn-success">Download</a>
+                                            <a href="{{route('laporan.download', $item)}}" class="btn btn-sm btn-success"><i class="fas fa-download"></i> Download</a>
+                                            <a href="{{route('laporan.download', $item)}}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
                                         </td>
                                     </tr>
                                     @endforeach

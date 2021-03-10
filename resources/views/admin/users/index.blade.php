@@ -15,7 +15,7 @@
 @section('content')
 <section class="section">
     <div class="section-header pt-3 pb-1">
-        <h3 class="page__heading">Users</h3>
+        <h3 class="page__heading">{{$title}}</h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -57,10 +57,11 @@
                                             <td>
                                                 {{-- <a href="{{ route('users.show',$user)}}" class="btn btn-primary" >show</a> --}}
                                                 {{-- @role('super-admin') --}}
-                                                    <a href="{{ route('users.edit',$user)}}" class="btn btn-primary btn-sm" >edit</a>
+                                                    <a href="{{ route('users.edit',$user)}}" class="btn btn-info btn-sm" ><i class="fas fa-edit"></i> Edit</a>
                                                     <button class="btn btn-sm btn-danger trigger--fire-modal-7"
                                                         data-confirm="Konfirmasi|Apakah anda yakin akan menghapus user <b>{{$user->username}}</b>?"
                                                         data-confirm-yes="window.location.href='{{route('users.delete',$user)}}'">
+                                                        <i class="fas fa-trash-alt"></i>
                                                         Delete
                                                     </button>
                                                 {{-- @endrole --}}
