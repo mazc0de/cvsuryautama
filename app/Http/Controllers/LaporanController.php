@@ -31,7 +31,6 @@ class LaporanController extends Controller
     public function create()
     {
         $title = "Buat Laporan";
-        // $user = auth()->user()->id;
         return view('admin.laporan.create', compact('title'));
     }
 
@@ -46,6 +45,7 @@ class LaporanController extends Controller
 
         $userid = auth()->user()->id;
         // dd($userid);
+        
         Laporan::create([
             'title' => $title,
             'date' => request('date'),
@@ -55,6 +55,43 @@ class LaporanController extends Controller
 
 
         return redirect()->route('laporan.index')->with('success', 'File berhasil diupload!');
+    }
+
+    public function edit($id)
+    {
+        $title = "Edit Laporan";
+        $laporan = Laporan::find($id);
+        return view('admin.laporan.edit', compact('title','laporan'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $laporan = Laporan::find($id);
+        $title = $laporan->title;
+
+        $this->validate($request,[
+            'date' => 'required',
+            'upload' => 'nullable|mimes:pdf,xls,xlsx',
+        ]);
+
+        if($request->upload){
+            $title = $request->file('upload')->getClientOriginalName();
+            Storage::delete($laporan->uploads);
+            $upload = $request->file('upload')->storeAs('files/laporan', $title);
+        }elseif($laporan->uploads){
+            $upload = $laporan->uploads;
+        }else{
+            $laporan = null;
+        }
+
+        $laporan->update([
+            'title' => $title,
+            'date' => request('date'),
+            'uploads' => $upload,
+        ]);
+
+        return redirect()->route('laporan.index')->with('success', 'File berhasil diupload!');
+
     }
 
     public function download($title)
