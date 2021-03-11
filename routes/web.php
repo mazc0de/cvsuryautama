@@ -61,6 +61,8 @@ Route::middleware('auth')->group(function(){
             Route::get('create', [LaporanController::class, 'create'])->name('laporan.create');
             Route::post('create', [LaporanController::class, 'store']);
             Route::get('download/{item:title}', [LaporanController::class, 'download'])->name('laporan.download');
+            Route::get('edit/{laporan:id}', [LaporanController::class, 'edit'])->name('laporan.edit');
+            Route::put('edit/{laporan:id}', [LaporanController::class, 'update']);
         });
 
         Route::prefix('help')->group(function(){
