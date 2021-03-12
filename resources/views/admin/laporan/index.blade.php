@@ -58,6 +58,14 @@
                                         <td>
                                             <a href="{{route('laporan.download', $item)}}" class="btn btn-sm btn-success"><i class="fas fa-download"></i> Download</a>
                                             <a href="{{route('laporan.edit', $item)}}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
+                                            @role("Super Admin")
+                                            <button class="btn btn-sm btn-danger trigger--fire-modal-7"
+                                                data-confirm="Konfirmasi|Apakah anda yakin akan menghapus role <b>{{$item->title}}</b>?"
+                                                data-confirm-yes="window.location.href='{{route('laporan.delete', $item)}}'">
+                                                <i class="fas fa-trash-alt"></i>
+                                                Delete
+                                            </button>
+                                            @endrole
                                         </td>
                                     </tr>
                                     @endforeach
