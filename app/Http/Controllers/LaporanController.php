@@ -104,4 +104,14 @@ class LaporanController extends Controller
             return $e->getMessage();
         }
     }
+
+    public function destroy($id)
+    {
+        $laporan = Laporan::find($id);
+        Storage::delete($laporan->uploads);
+        $laporan->delete();
+        // dd($laporan);
+        return redirect()->route('laporan.index')->with('delete', 'File berhasil dihapus!');
+
+    }
 }
