@@ -42,10 +42,11 @@ class LaporanController extends Controller
         ]);
 
         $title = $request->file('upload')->getClientOriginalName();
+        dd($title);
 
         $userid = auth()->user()->id;
         // dd($userid);
-        
+
         Laporan::create([
             'title' => $title,
             'date' => request('date'),
