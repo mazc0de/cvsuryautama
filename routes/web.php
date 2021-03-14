@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\{UserController,HelpController,LaporanController,PermissionController,RoleController};
+use App\Http\Controllers\{UserController,HelpController, KerjasamaController, LaporanController,PermissionController,RoleController};
 use Illuminate\Support\Facades\Route;
 use App\Models\{User, Laporan};
 /*
@@ -63,12 +63,19 @@ Route::middleware('auth')->group(function(){
             Route::get('download/{item:title}', [LaporanController::class, 'download'])->name('laporan.download');
             Route::get('edit/{laporan:id}', [LaporanController::class, 'edit'])->name('laporan.edit');
             Route::put('edit/{laporan:id}', [LaporanController::class, 'update']);
+            Route::get('delete/{laporan:id}', [LaporanController::class, 'destroy'])->name('laporan.delete');
         });
 
         Route::prefix('help')->group(function(){
             Route::get('index', [HelpController::class, 'index'])->name('help.index');
             Route::get('submit', [HelpController::class, 'submit'])->name('help.submit');
             Route::post('submit', [HelpController::class, 'store']);
+        });
+
+        Route::prefix('kerjasama')->group(function(){
+            Route::get('/', [KerjasamaController::class, 'index'])->name('kerjasama.index');
+            Route::get('create', [KerjasamaController::class, 'create'])->name('kerjasama.create');
+            Route::post('create', [KerjasamaController::class, 'store']);
         });
     });
 });
