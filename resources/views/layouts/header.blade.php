@@ -1,6 +1,23 @@
 <form class="form-inline mr-auto" action="#">
     <ul class="navbar-nav mr-3">
         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+        <li class="mt-1" style="color: white;">
+            <b>
+            <?php
+                $tanggal = mktime(date('m'), date("d"), date('Y'));
+                echo "Tanggal : <b> " . date("d-m-Y", $tanggal ) . "</b>";
+                date_default_timezone_set("Asia/Jakarta");
+                $a = date ("H");
+            ?>
+            ,
+            </b>
+         </li>
+        <li>
+            <b>
+                <div id="clock" style="color: white;" class="mt-1 ml-2"></div>
+            </b>
+        </li>
+        
     </ul>
 </form>
 <ul class="navbar-nav navbar-right">
@@ -51,3 +68,39 @@
         </li>
     @endif
 </ul>
+<script type="text/javascript">
+    <!--
+    function showTime() {
+        var a_p = "";
+        var today = new Date();
+        var curr_hour = today.getHours();
+        var curr_minute = today.getMinutes();
+        var curr_second = today.getSeconds();
+        if (curr_hour < 12) {
+            a_p = "AM";
+        } else {
+            a_p = "PM";
+        }
+        if (curr_hour == 0) {
+            curr_hour = 12;
+        }
+        if (curr_hour > 12) {
+            curr_hour = curr_hour - 12;
+        }
+        curr_hour = checkTime(curr_hour);
+        curr_minute = checkTime(curr_minute);
+        curr_second = checkTime(curr_second);
+     document.getElementById('clock').innerHTML=curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+        }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    setInterval(showTime, 500);
+    //-->
+    </script>
+
+ 
