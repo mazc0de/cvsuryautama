@@ -40,6 +40,17 @@
     </a>
 </li>
 
+<li class="side-menus {{ Route::currentRouteNamed('kerjasama.create') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('kerjasama.create')}}">
+        <i class="fas fa-info-circle"></i><span>Kerjasama</span>
+    </a>
+</li>
+<li class="side-menus {{ Route::currentRouteNamed('kerjasama.index') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('kerjasama.index')}}">
+        <i class="fas fa-info-circle"></i><span>Daftar Kerjasama</span>
+    </a>
+</li>
+
 <li class="side-menus trigger--fire-modal-1" data-confirm="Konfirmasi|Apakah anda yakin akan logout?"
     data-confirm-yes="window.location.href='{{route('logout')}}'">
     <a class="nav-link text-danger" href="#">
