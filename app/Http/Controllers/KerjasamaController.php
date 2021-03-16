@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kerjasama;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KerjasamaController extends Controller
 {
@@ -14,7 +16,11 @@ class KerjasamaController extends Controller
      */
     public function index()
     {
-        //
+        $title = "Daftar Kerjasama";
+        $kerjasama = Kerjasama::all();
+        // $kerjasama->photo = json_decode()
+        // $images = File::allFiles(public_path('kerjasama'))
+        return view('kerjasama.index', compact('title', 'kerjasama'));
     }
 
     /**
