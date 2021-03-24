@@ -41,15 +41,21 @@ class LaporanController extends Controller
             'upload' => request('upload') ? 'required|mimes:pdf,xls,xlsx':'',
         ]);
 
-        $title = $request->file('upload')->getClientOriginalName();
-        dd($title);
+        // $title =  str_replace(' ','_', auth()->user()->name) . "-" .$request->file('upload')->getClientOriginalName() . $request->date ;
+        
+        // dd($newDate);
+        $title = "report-" . strtolower(str_replace(' ','_', auth()->user()->name)) . "_" . $newDate . "." .$request->file('upload')->getClientOriginalExtension() ;
+        $date = $request->date;
+        $date2 = strtotime($date);
+        $newDate = date("d-m-Y", $date2);
+        // dd($title);
 
         $userid = auth()->user()->id;
         // dd($userid);
 
         Laporan::create([
             'title' => $title,
-            'date' => request('date'),
+            'date' => $newDate,
             'uploads' => $request->file('upload')->storeAs('files/laporan', $title),
             'user_id' => $userid,
         ]);
@@ -76,7 +82,11 @@ class LaporanController extends Controller
         ]);
 
         if($request->upload){
-            $title = $request->file('upload')->getClientOriginalName();
+            $date = $request->date;
+            $date2 = strtotime($date);
+            $newDate = date("d-m-Y", $date2);
+            $title = "report-" . strtolower(str_replace(' ','_', auth()->user()->name)) . "_" . $newDate . "." .$request->file('upload')->getClientOriginalExtension() ;
+
             Storage::delete($laporan->uploads);
             $upload = $request->file('upload')->storeAs('files/laporan', $title);
         }elseif($laporan->uploads){
@@ -87,7 +97,7 @@ class LaporanController extends Controller
 
         $laporan->update([
             'title' => $title,
-            'date' => request('date'),
+            'date' => $newDate,
             'uploads' => $upload,
         ]);
 
