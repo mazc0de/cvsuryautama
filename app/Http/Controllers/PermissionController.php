@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 
-// public function __construct()
-// {
-//     $this->middleware('permission:permission-create|permission-list|permission-edit|permission-delete',['only' => ['index']]);
-//     $this->middleware('permission:permission-create',['only' => ['create','store']]);
-//     $this->middleware('permission:permission-edit',['only' => ['edit','update']]);
-//     $this->middleware('permission:permission-delete',['only' => ['destroy']]);
-// }
+
 
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:permission-create|permission-list|permission-edit|permission-delete',['only' => ['index']]);
+        $this->middleware('permission:permission-create',['only' => ['create','store']]);
+        $this->middleware('permission:permission-edit',['only' => ['edit','update']]);
+        $this->middleware('permission:permission-delete',['only' => ['destroy']]);
+    }
     public function index(){
         $title = "Daftar Permission";
         $permissions = Permission::all();
