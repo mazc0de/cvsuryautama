@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
 
-    <title>Hello, world!</title>
+    <title>{{$title}}</title>
   </head>
   <body>
     <!-- Navbar -->
