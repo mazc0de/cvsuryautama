@@ -13,6 +13,13 @@
     <script src="{{ asset('assets/js/modules-datatables.js') }}"></script>
 @endpush
 
+@section('css_zoom')
+
+@endsection
+
+@section('js_zoom')
+
+@endsection
 
 @section('content')
 
@@ -22,16 +29,13 @@
     </div>
     <div class="section-body">
         <div class="row">
-            <div class="col-1"></div>
-
-            <div class="col-10">
+            <div class="col-12">
                 @include('alert')
                 <div class="card">
                     <div class="card-header">
                         <h4></h4>
                         <div class="card-header-action">
                             <a href="{{ route('roles.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Role</a>
-
                         </div>
                     </div>
                     <div class="card-body">
@@ -60,12 +64,19 @@
                                                 <a href="{{ asset('storage/'.$item->images) }}" target="_blank">
                                                     <img src="{{ asset('storage/'.$item->images) }}" alt="" srcset="" width="100px">
                                                 </a>
-
                                             </td>
                                             {{-- <td>
                                                 <div class="gallery-item" data-image="{{ asset('storage/'.$item->images) }}" data-title="Image 1" href="{{ asset('storage/'.$item->images) }}" title="Image 1" style="background-image: url(&quot;{{ asset('storage/'.$item->images) }}&quot;);"></div>
                                                 <img src="{{ asset('storage/'.$item->images) }}" alt="" srcset="" width="50px"></td> --}}
-                                            <td>{{$item->status}}</td>
+                                            <td>
+                                                <span class="badge badge-info mt-1"><i class="fas fa-shield-alt"></i> {{$item->status}}</span>
+                                                <br>
+                                                <!-- <select name="status" id="" onchange="myFunction()">
+                                                    <option value="belum di tanggapi">Belum di tanggapi</option>
+                                                    <option value="sedang di review">Sedang di review</option>
+                                                    <option value="selesai">Selesai</option>
+                                                </select> -->
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -74,11 +85,6 @@
                     </div>
                 </div>
             </div>
-            <div id="myModal" class="modal">
-                <img class="modal-content" id="img01">
-              </div>
-            <div class="col-1"></div>
-
         </div>
     </div>
 </section>
