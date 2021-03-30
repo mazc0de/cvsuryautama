@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
     
+    @yield('css_kerjasama')
+    @yield('css_zoom')
     @yield('page_css')
     
     @yield('css')
@@ -37,19 +39,25 @@
                 @include('layouts.sidebar')
             </div>
             <div class="main-content">
+
                 @yield('content')
+
             </div>
             <footer class="main-footer">
                 @include('layouts.footer')
             </footer>
         </div>
     </div>
+<!-- The Modal -->
 
 </body>
+@yield('js_zoom')
+
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+@yield('js_kerjasama')
 
 @stack('datatables-js')
 @stack('datepicker-js')
@@ -60,6 +68,7 @@
 <script src="{{ mix('assets/js/profile.js') }}"></script>
 <script src="{{ mix('assets/js/custom/custom.js') }}"></script> 
 
+@yield('js_zoom')
 @yield('page_js')
 @yield('scripts')
 
@@ -78,4 +87,5 @@
         };
     }(jQuery));
 </script>
+
 </html>
