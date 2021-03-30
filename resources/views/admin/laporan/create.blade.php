@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section class="section">
   <div class="section-header">
       <h3 class="page__heading">{{$title}}</h3>
@@ -20,7 +21,6 @@
                       <div class="card-body">
                         <form action="{{ route('laporan.create')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            {{-- <input type="text" name="userid" value="{{$user->id}}"> --}}
                             <div class="form-group">
                                 <label>Date</label>
                                 <input type="date" class="form-control" name="date">
