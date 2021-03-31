@@ -1621,7 +1621,13 @@ div.mc-image {
    Media Queries
 --------------------------- */
 @media (min-width: 768px) {
-
+#hero_section{
+    left: 0;
+    right: 0;
+    min-width: 100%; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
 
 }
 @media (max-width: 768px) {
