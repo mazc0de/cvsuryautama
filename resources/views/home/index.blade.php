@@ -1,268 +1,362 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>CV. Surya Utama</title>
+<link rel="icon" href="{{asset('assets/home/img/icon-perusahaan.png')}}" type="image/png">
+<link href="{{asset('assets/home/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('assets/home/css/style.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('assets/home/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('assets/home/css/animate.css')}}" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap CSS -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
 
-    <title>{{$title}}</title>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #F5350C;">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{{asset('assets\img\Icon-Perusahaan.png')}}" height="50" alt="" loading="lazy">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
+<!--Header_section-->
+<header id="header_wrapper" style="background-color: #f88f01; ">
+  <div class="container">
+    <div class="header_box">
+      <div class="logo"><a href="#hero_section" class="scroll-link"><img src="{{asset('assets/home/img/icon-perusahaan.png')}}" alt="logo" style="width: 70px;"></a></div>
+	  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
-      </nav>
-      <!-- End Navbar -->
-
-      <!-- Corousel -->
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/img/Corousel.svg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/Banner.svg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/Corousel.svg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+	    <div id="main-nav" class="collapse navbar-collapse navStyle">
+			<ul class="nav navbar-nav navbar-light" id="mainNav">
+			  <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
+			  <li><a href="#aboutUs" class="scroll-link">About</a></li>
+			  <li><a href="#service" class="scroll-link">Register</a></li>
+			  <li><a href="#Portfolio" class="scroll-link">Dokumentasi</a></li>
+			  <li><a href="#clients" class="scroll-link">Clients</a></li>
+			  <li><a href="#team" class="scroll-link">Team</a></li>
+			  <li><a href="#contact" class="scroll-link">Contact</a></li>
+			</ul>
       </div>
-      <!-- End Corousel -->
-      
-      <!-- About -->
-      <div class="container">
+	 </nav>
+    </div>
+  </div>
+</header>
+<!--Header_section-->
+<!--Hero_Section-->
+<section id="hero_section" style="background-image:url({{asset('assets/home/img/header.svg')}}); background-size: cover; ">
+  <div class="hero_wrapper">
+    <div class="container">
+      <div class="hero_section">
         <div class="row">
-            <div class="col-sm">
-              <h1><b>Home of Parking System</b></h1><br>
+          <div class="col-lg-6">
+            <div class="top_left_cont zoomIn wow animated">
+              <h2><strong>CV. Surya Utama <br></strong> Service of Parking System</h2>
+              <p>Pengelolaan Parkir Manual?
+                <br> Itulah yang sering terdengar dari ucapan para pengguna parkir. Karena itu, CV. Surya Utama hadir untuk menjawab semua permasalahan yang ada.
+              </p>
+              <a href="#service" class="read_more2">Get Started</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Hero_Section-->
 
-              <p>Pengelolaan Parkir Manual? Hal itulah yang sering terdengar dari ucapan para pengguna parkir. Karena itu, CV. Surya Utama hadir untuk menjawab semua permasalahan yang ada. Modern teknologi, pengelolaan yang berkelanjutan dan konsisten, SDM yang berkualitas, dan masih banyak lagi. <br> CV. Surya Utama adalah perusahaan penyedia layanan jasa manajemen parkir, yang telah memiliki rekam jejak panjang dalam bidang perparkiran di Indonesia. Kami berkomitmen untuk memberikan pelayanan yang terukur dan memuaskan kepada anda sebagai User Company, serta akan senantiasa terus menerus melakukan update sistem teknologi parkir terkini demi terciptanya kepuasan Client dan Customer kami. <br>CV. Surya Utama bekerja sama dengan pihak-pihak terkait untuk dapat menjawab tantangan permasalahan parkir di Indonesia di era Globalisasi sekarang ini.</p>
+<!--Aboutus-->
+<section id="aboutUs">
+  <div class="inner_wrapper">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="inner_section">
+    <div class="row">
+        <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right"><img src="{{asset('assets/home/img/parkir.png')}}" class="delay-03s animated wow zoomIn" alt=""></div>
+          <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-left">
+            <div class=" delay-01s animated fadeInDown wow animated">
+              <h3>Home of Parking System</h3>
+                <p><br> Modern teknologi, pengelolaan yang berkelanjutan dan konsisten, SDM yang berkualitas, dan masih banyak lagi.
+                  <br><br> CV. Surya Utama adalah perusahaan penyedia layanan jasa manajemen parkir, yang telah memiliki rekam jejak panjang dalam bidang perparkiran di Indonesia. Kami berkomitmen untuk memberikan pelayanan yang terukur dan memuaskan kepada anda sebagai User Company, serta akan senantiasa terus menerus melakukan update sistem teknologi parkir terkini demi terciptanya kepuasan Client dan Customer kami.
+                  <br><br> CV. Surya Utama bekerja sama dengan pihak-pihak terkait untuk dapat menjawab tantangan permasalahan parkir di Indonesia di era Globalisasi sekarang ini.</p>
             </div>
-            <div class="col-sm">
-                <img src="{{asset('assets\img\Parkir.png')}}" class="rounded float-right" alt="..." height="500">
+              <div class="work_bottom">
+                <span>Want to know more..</span> <a href="#contact" class="contact_btn" style="border-color: #f88f01;color:#f88f01">Contact Us</a>
+              </div>
             </div>
         </div>
       </div>
-      <!-- End About -->
-      
-      <!-- Register -->
-      <div class="container">
-          <h3 class="text-center">Daftar & Kerja Sama</h3>
-          <h1 class="text-center"><b> Proses Bekerja Sama</b></h1>
-          <!-- Card -->
-          <div class="row">
-            <div class="col sm-2">
-              <div class="card" style="background-color:#FF7600; color: white; ">
-                <img src="{{asset('assets\img\Registration.svg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Registration</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col sm-2">
-              <div class="card" style="background-color:#FF7600; color: white; ">
-                <img src="{{asset('assets\img\Verification.svg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Verification</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col sm-2">
-              <div class="card" style="background-color:#FF7600; color: white; ">
-                <img src="{{asset('assets\img\Survey.svg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Survey</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col sm-2">
-              <div class="card" style="background-color:#FF7600; color: white; ">
-                <img src="{{asset('assets\img\Contract.svg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Contract</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col sm-2">
-              <div class="card" style="background-color:#FF7600; color: white;">
-                <img src="{{asset('assets\img\Construction.svg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Construction</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
+    </div>
+  </div>
+</section>
+<!--Aboutus-->
+
+<!--Service-->
+<section  id="service">
+  <div class="container">
+    <h2>Service</h2>
+    <div class="service_wrapper">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="service_block">
+            <div class="service_icon delay-03s animated wow  zoomIn" style="border-color: #f88f01;"> <span><i class="fa fa-edit" style="color: #f88f01;"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Registration</h3>
+            <p class="animated fadeInDown wow">Pihak Client mendaftar pada form yang tercantum didalam website CV. Surya Utama</p>
           </div>
-          <!-- End Card -->
-            <h1 class="text-center"><b> Registrasi</b></h1>
-            <form>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                          <label for="exampleInputNama">Nama</label>
-                          <input type="text" class="form-control" id="exampleInputNama" aria-describedby="emailHelp">
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="form-group">
-                          <label for="exampleInputInstansi">Instansi</label>
-                          <input type="text" class="form-control" id="exampleInputInstansi">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="form-group">
-                          <label for="exampleInputAlamat">Alamat</label>
-                          <input type="text" class="form-control" id="exampleInputAlamat">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                          <label for="exampleInputHP">No. HP</label>
-                          <input type="text" class="form-control" id="exampleInputHP">
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="form-group">
-                          <label for="exampleInputLuas">Luas Lahan</label>
-                          <input type="text" class="form-control" id="exampleInputLuas">
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="col-lg-4 borderLeft">
+          <div class="service_block">
+            <div class="service_icon icon2  delay-03s animated wow zoomIn" style="border-color: #f88f01;"> <span><i class="fa fa-check" style="color: #f88f01;"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Verification</h3>
+            <p class="animated fadeInDown wow">Setelah data terkirim, pihak CV. Surya Utama akan meninjau spesifik data Client</p>
+          </div>
+        </div>
+        <div class="col-lg-4 borderLeft">
+          <div class="service_block">
+            <div class="service_icon icon3  delay-03s animated wow zoomIn" style="border-color: #f88f01;"> <span><i class="fa fa-user" style="color: #f88f01;"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Survey</h3>
+            <p class="animated fadeInDown wow">Pihak CV. Surya Utama akan menghubungi Client dan melakukan survey lokasi</p>
+          </div>
+        </div>
+      </div>
+      <div class="row borderTop">
+        <div class="col-lg-4 mrgTop">
+          <div class="service_block">
+            <div class="service_icon delay-03s animated wow zoomIn" style="border-color: #f88f01;"> <span><i class="fa fa-dropbox" style="color: #f88f01;"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Contract</h3>
+            <p class="animated fadeInDown wow">Jika terjadi suatu kesepakatan bersama, maka akan diadakannya proses tanda tangan kontrak oleh kedua belah pihak</p>
+          </div>
+        </div>
+        <div class="col-lg-4 borderLeft mrgTop">
+          <div class="service_block">
+            <div class="service_icon icon2  delay-03s animated wow zoomIn" style="border-color: #f88f01;"> <span><i class="fa fa-slack" style="color: #f88f01;"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Construction</h3>
+            <p class="animated fadeInDown wow">Pihak CV. Surya Utama mulai membangun sistem di lokasi yang sudah ditentukan</p>
+          </div>
+        </div>
+        <div class="col-lg-4 borderLeft mrgTop">
+          <div class="service_block">
+            <div class="service_icon icon3  delay-03s animated wow zoomIn" style="border-color: #f88f01;"> <span><i class="fa fa-users" style="color: #f88f01;"></i></span> </div>
+            <h3 class="animated fadeInUp wow">Finishing</h3>
+            <p class="animated fadeInDown wow">Recruitment Sumber Daya Manusia dan pelatihan sistem sebelum mulai beroperasi</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner_section">
+        <h2>Registration</h2>
+        <div class="service_wrapper">
+          <form>
+            <div class="row">
+              <div class="col-lg-6 wow fadeInLeft delay-06s">
                 <div class="form-group">
-                  <label for="exampleInputKeterangan">Keterangan</label>
-                  <input type="text" class="form-control" id="exampleInputKeterangan">
+                  <label for="nama">Nama</label>
+                  <input type="text" class="form-control" id="nama">
                 </div>
-                
-                <button type="submit" class="btn btn-warning text-center">Submit</button>
-            </form>
-      </div>
-      <!-- End Register -->
-
-      <!-- Team -->
-      <h1 class="text-center"><b> Our Team</b></h1>
-      <div class="container">
-          <div class="row text-center">
-              <div class="col-sm">
-                    <img src="{{asset('assets\img\avatar-1.svg')}}" alt="" width="250">
-                    <h4>Oriega Allan</h4>
-                    <h5>CEO</h5>
               </div>
-              <div class="col-sm">
-                    <img src="{{asset('assets\img\avatar-2.svg')}}" alt="" width="250">
-                    <h4>M Ni'am</h4>
-                    <h5>CO - Founder</h5>
+              <div class="col-lg-6 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="Instansi">Instansi</label>
+                  <input type="text" class="form-control" id="Instansi">
+                </div>
               </div>
-          </div>
-          <div class="row text-center">
-              <div class="col-sm">
-                    <img src="{{asset('assets\img\avatar-3.svg')}}" alt="" width="250">
-                    <h4>Daffa</h4>
-                    <h5>CTO</h5>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="Email">Email</label>
+                  <input type="email" class="form-control" id="Email">
+                </div>
               </div>
-              <div class="col-sm">
-                    <img src="{{asset('assets\img\avatar-4.svg')}}" alt="" width="250">
-                    <h4>Heru M</h4>
-                    <h5>CO - Founder</h5>
+              <div class="col-lg-6 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="Alamat">Alamat</label>
+                  <input type="text" class="form-control" id="Alamat">
+                </div>
               </div>
-          </div>
-      </div>
-      <!-- End Team -->
-
-      <!-- Footer -->
-      <div class="card">
-        <!--<div class="card-header text-center">
-          Featured
-        </div>-->
-        <div class="card-body text-light" style="background-color: #F5350C;">
-          <div class="container">
-              <h5 class="card-title text-center">About Us</h5>
-            <form>
-              <div class="form-group">
-                <label class="text-left" for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="row">
+              <div class="col-lg-6 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="HP">No. HP</label>
+                  <input type="text" class="form-control" id="HP">
+                </div>
               </div>
-              <div class="form-group">
-                <label for="exampleFormControlPesan">Pesan</label>
-                <input type="text" class="form-control" id="exampleFormControlPesan" placeholder="Your Pesan">
+              <div class="col-lg-6 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="Luas">Luas Lahan</label>
+                  <input type="text" class="form-control" id="Luas">
+                </div>
               </div>
-              <div class=" text-center">
-                  <button class="btn btn-outline-light">Submit</button>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="Keterangan">Keterangan</label>
+                  <textarea class="form-control" id="Keterangan" rows="3"></textarea>
+                </div>
               </div>
-            </form>
-          </div>
-        </div>
-        <div class="card-footer text-muted text-center">
-          Copyright
+            </div>
+            <div class="row">
+              <div class="col-lg-12 wow fadeInLeft delay-06s">
+                <div class="form-group">
+                  <label for="gambar">Gambar</label>
+                  <input type="file" class="form-control-file" id="gambar">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 wow fadeInLeft delay-06s">
+                <button type="submit" class="btn btn-warning">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      <!-- End Footer -->
-      
-      
+    </div>
+  </div>
+</section>
+<!--Service-->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+<!-- Portfolio -->
+<section id="Portfolio" class="page_section">
+  <h2>Dokumentasi</h2>
+  <div class="portfolio container">
+    <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-1.png')}}" alt="Portfolio 1"> </div>
+      </div>
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-1.png')}}" alt="Portfolio 1"> </div>
+      </div>
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-2.png')}}" alt="Portfolio 1"> </div>
+      </div>
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-2.png')}}" alt="Portfolio 1"> </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-3.png')}}" alt="Portfolio 1"> </div>
+      </div>
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-3.png')}}" alt="Portfolio 1"> </div>
+      </div>
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-1.png')}}" alt="Portfolio 1"> </div>
+      </div>
+      <div class="col-md-3">
+        <div class="portfolio_img"> <img src="{{asset('assets/home/img/dokumentasi-1.png')}}" alt="Portfolio 1"> </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<!--/Portfolio -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<section class="page_section" id="clients"><!--page_section-->
+  <h2>Clients</h2>
+<!--page_section-->
+<div class="client_logos" style="background-color: #f88f01; "><!--client_logos-->
+  <div class="container">
+    <ul class="fadeInRight animated wow">
+      <li><a href="javascript:void(0)"><img src="{{asset('assets/home/img/logo_rsba.png')}}" alt=""></a></li>
+      <li><a href="javascript:void(0)"><img src="{{asset('assets/home/img/logo_rsba.png')}}" alt=""></a></li>
+      <li><a href="javascript:void(0)"><img src="{{asset('assets/home/img/logo_rsba.png')}}" alt=""></a></li>
+    </ul>
+  </div>
+</div>
+</section>
+<!--client_logos-->
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+<section class="page_section team" id="team"><!--main-section team-start-->
+  <div class="container">
+    <h2>Team</h2>
+    <h6>Struktur Organisasi Perusahaan</h6>
+    <div class="team_section clearfix">
+      <div class="team_area">
+        <div class="team_box wow fadeInDown delay-03s">
+          <img src="{{asset('assets/home/img/team_pic1.jpg')}}" alt="">
+        </div>
+        <h3 class="wow fadeInDown delay-03s">Sulistiyono</h3>
+        <span class="wow fadeInDown delay-03s">Direktur Utama</span>
+      </div>
+      <div class="team_area">
+        <div class="team_box  wow fadeInDown delay-06s">
+          <img src="{{asset('assets/home/img/team_pic2.jpg')}}" alt="">
+        </div>
+        <h3 class="wow fadeInDown delay-06s">Arifin Yekti</h3>
+        <span class="wow fadeInDown delay-06s">Supervisor</span>
 
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
-  </body>
+      </div>
+      <div class="team_area">
+        <div class="team_box wow fadeInDown delay-09s">
+          <img src="{{asset('assets/home/img/team_pic3.jpg')}}" alt="">
+        </div>
+        <h3 class="wow fadeInDown delay-09s">Mugi Handayani</h3>
+        <span class="wow fadeInDown delay-09s">Public Relation</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/Team-->
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>Contact Us</h2>
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">
+		 <div class="contact_info">
+      <div class="detail">
+        <h4>Address</h4>
+        <p>Jl. Kanalsari Barat VI/no.3, Semarang</p>
+      </div>
+      <div class="detail">
+        <h4>call Center</h4>
+        <p>+62 8122 8972 28</p>
+      </div>
+      <div class="detail">
+        <h4>Email</h4>
+        <p>sulistiyonokanalsari.gmail.com</p>
+      </div>
+    </div>
+          <ul class="social_links">
+            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
+            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+          <div class="form">
+            <input class="input-text" type="text" name="" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+            <input class="input-text" type="text" name="" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+            <input class="input-btn" type="submit" value="send message" style="background-color: #f88f01;">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container">
+    <div class="footer_bottom" style="font-family: 'Raleway', sans-serif;"><span>Copyright © 2021 - CV. Surya Utama</span> </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="{{asset('assets/home/js/jquery-1.11.0.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/jquery-scrolltofixed.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/jquery.nav.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/jquery.easing.1.3.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/jquery.isotope.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/wow.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/home/js/custom.js')}}"></script>
+
+</body>
 </html>
