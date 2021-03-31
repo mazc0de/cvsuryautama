@@ -619,7 +619,7 @@ img {
 }
 
 .client_logos img{
-    height: 150px;
+    max-height: 150px;
     width: auto;
 }
 
@@ -1177,8 +1177,8 @@ img {
 }
 
 .portfolio-item .portfolio_img img {
-    width: 350px; 
-    height: 260px; 
+    width: 100%;
+    height: auto;
 }
 
 .portfolio-item:hover .item_overlay {
