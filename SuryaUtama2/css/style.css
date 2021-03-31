@@ -1176,7 +1176,7 @@ img {
     position: relative;
 }
 
-.portfolio-item .portfolio_img img {
+.portfolio_img img {
     width: 100%;
     height: auto;
 }
