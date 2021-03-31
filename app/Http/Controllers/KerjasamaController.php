@@ -45,10 +45,11 @@ class KerjasamaController extends Controller
         // dd($request->all());
         $this->validate($request, [
             'nama' => 'required',
-            'nama_perusahaan' => 'required',
+            'instansi' => 'required',
+            'email' => 'required|email',
+            'alamat' => 'required',
             'no_hp' => 'required|numeric',
             'luas_lahan' => 'required|numeric',
-            'alamat' => 'required',
             'photos' => 'required',
             'photos.*' => 'mimes:png,jpg,jpeg',
         ]);
@@ -63,10 +64,12 @@ class KerjasamaController extends Controller
 
         Kerjasama::create([
             'nama' => $request->nama,
-            'nama_perusahaan' => $request->nama_perusahaan,
+            'instansi' => $request->instansi,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
             'hp' => $request->no_hp,
             'luas_lahan' => $request->luas_lahan,
-            'alamat' => $request->alamat,
+            'keterangan' => $request->keterangan,
             'photo' => json_encode($data)
         ]);
         // $item = new Kerjasama();
