@@ -42,12 +42,13 @@ class LaporanController extends Controller
         ]);
 
         // $title =  str_replace(' ','_', auth()->user()->name) . "-" .$request->file('upload')->getClientOriginalName() . $request->date ;
-        
+
         // dd($newDate);
-        $title = "report-" . strtolower(str_replace(' ','_', auth()->user()->name)) . "_" . $newDate . "." .$request->file('upload')->getClientOriginalExtension() ;
         $date = $request->date;
         $date2 = strtotime($date);
         $newDate = date("d-m-Y", $date2);
+        $title = "report-" . strtolower(str_replace(' ','_', auth()->user()->name)) . "-" . $newDate . "." .$request->file('upload')->getClientOriginalExtension() ;
+
         // dd($title);
 
         $userid = auth()->user()->id;
