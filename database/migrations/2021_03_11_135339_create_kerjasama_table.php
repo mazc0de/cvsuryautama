@@ -16,14 +16,14 @@ class CreateKerjasamaTable extends Migration
         Schema::create('kerjasama', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('nama_perusahaan');
+            $table->string('instansi');
+            $table->string('email');
+            $table->string('alamat');
             $table->string('hp');
             $table->string('luas_lahan');
-            $table->string('alamat');
             $table->string('keterangan');
             $table->string('photo');
             $table->timestamps();
-
         });
     }
 
