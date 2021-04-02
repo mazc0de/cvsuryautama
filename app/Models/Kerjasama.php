@@ -11,10 +11,11 @@ class Kerjasama extends Model
     protected $table = "kerjasama";
     protected $fillable = [
         'nama',
-        'nama_perusahaan',
+        'instansi',
+        'email',
+        'alamat',
         'hp',
         'luas_lahan',
-        'alamat',
         'keterangan',
         'photo'
       ];
