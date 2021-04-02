@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\{UserController,HelpController, KerjasamaController, LaporanController,PermissionController,RoleController};
+use App\Http\Controllers\{UserController,HelpController, HomeController, KerjasamaController, LaporanController,PermissionController,RoleController};
 use Illuminate\Support\Facades\Route;
 use App\Models\{User, Laporan};
 /*
@@ -21,6 +21,9 @@ use App\Models\{User, Laporan};
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/', [HomeController::class, 'kerjasama']);
+Route::post('/contact', [HomeController::class, 'contact']);
+
 Auth::routes();
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
@@ -75,7 +78,6 @@ Route::middleware('auth')->group(function(){
         Route::prefix('kerjasama')->group(function(){
             Route::get('/', [KerjasamaController::class, 'index'])->name('kerjasama.index');
             Route::get('create', [KerjasamaController::class, 'create'])->name('kerjasama.create');
-            Route::post('create', [KerjasamaController::class, 'store']);
         });
     });
 });

@@ -53,7 +53,7 @@ a, a:hover, a:active {
 ---------------------------------*/
 body {
     background: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #888888;
@@ -71,7 +71,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #222222;
     font-size: 18px;
@@ -81,7 +81,7 @@ h3 {
 h6 {
     font-size: 16px;
     color: #888888;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-align: center;
     margin: 0 0 60px 0;

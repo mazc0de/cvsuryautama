@@ -4149,3 +4149,33 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
         font-size: 9px;
     }
 }
+
+.comment {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.commenter {
+    float: left;
+}
+
+.commenter img {
+    width: 35px;
+    height: 35px;
+}
+
+.comment-text-area {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.textinput {
+    float: left;
+    width: 100%;
+    min-height: 75px;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
+}
