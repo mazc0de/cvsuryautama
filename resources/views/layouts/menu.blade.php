@@ -26,30 +26,24 @@
         <i class=" fas fa-folder-open"></i><span>Laporan</span>
     </a>
 </li>
+<li class="side-menus {{ Route::currentRouteNamed('help.submit') ? 'active' : ''}}">
+    <a class="nav-link" href="{{route('help.submit')}}">
+    <i class="fas fa-headset"></i><span>Helpdesk</span>
+    </a>
+</li>
 @role('Super Admin')
 <li class="side-menus {{ Route::currentRouteNamed('help.index') ? 'active' : ''}}">
     <a class="nav-link" href="{{route('help.index')}}">
-        <i class="fas fa-info-circle"></i><span>Daftar Helpdesk</span>
+    <i class="fas fa-list-ol"></i></i><span>Daftar Helpdesk</span>
     </a>
 </li>
 @endrole
 
-<li class="side-menus {{ Route::currentRouteNamed('help.submit') ? 'active' : ''}}">
-    <a class="nav-link" href="{{route('help.submit')}}">
-        <i class="fas fa-info-circle"></i><span>Helpdesk</span>
-    </a>
-</li>
 
 @role("Super Admin")
-<li class="side-menus {{ Route::currentRouteNamed('kerjasama.create') ? 'active' : ''}}">
-    <a class="nav-link" href="{{route('kerjasama.create')}}">
-        <i class="fas fa-info-circle"></i><span>Kerjasama</span>
-    </a>
-</li>
-
 <li class="side-menus {{ Route::currentRouteNamed('kerjasama.index') ? 'active' : ''}}">
     <a class="nav-link" href="{{route('kerjasama.index')}}">
-        <i class="fas fa-info-circle"></i><span>Daftar Kerjasama</span>
+    <i class="fas fa-list-ol"></i><span>Daftar Kerjasama</span>
     </a>
 </li>
 @endrole

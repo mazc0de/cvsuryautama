@@ -75,12 +75,12 @@
                                 <div class="form-group">
                                     <label>Alamat</label>
                                     <br>
-                                    <div class="form-group">
-                                        <textarea name="alamat"></textarea>
+                                    <div class="comment">
+                                        <textarea class="textinput" cols="172" rows="10" name="alamat"></textarea>
+                                            @error('alamat')
+                                                <div class="mt-2 text-danger">{{ $message }}</div>
+                                            @enderror
                                     </div>
-                                    @error('alamat')
-                                        <div class="mt-2 text-danger">{{ $message }}</div>
-                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Keterangan (opsional)</label>

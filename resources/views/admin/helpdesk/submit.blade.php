@@ -42,10 +42,12 @@
                                 <div class="form-group">
                                     <label>Deskripsi</label>
                                     <br>
-                                    <textarea id="" cols="172" rows="10" name="description"></textarea>
-                                    @error('description')
-                                        <div class="mt-2 text-danger">{{ $message }}</div>
-                                    @enderror
+                                    <div class="comment">
+                                        <textarea class="textinput" cols="172" rows="10" name="description"></textarea>
+                                            @error('description')
+                                                <div class="mt-2 text-danger">{{ $message }}</div>
+                                            @enderror
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
