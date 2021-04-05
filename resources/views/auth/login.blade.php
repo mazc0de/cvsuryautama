@@ -21,14 +21,20 @@
                 <div class="form-group">
                     <label for="username">Username:</label><span
                             class="text-danger">*</span>
-                    <input id="username" type="username"
+                            <input id="username" type="text" class="ok form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus placeholder="Username">
+                    <!-- <input id="username" type="username"
                            class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}"
                            placeholder="Enter username" name="username" tabindex="1"
                            value="{{ old('username') }}"
                            required autofocus>
                     <div class="invalid-feedback">
                         {{ $errors->first('username') }}
-                    </div>
+                    </div> -->
+                    @error('username')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="form-group">
