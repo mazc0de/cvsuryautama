@@ -22,7 +22,11 @@ class PermissionTableSeeder extends Seeder
             'laporan-list',
             'laporan-create',
             'laporan-edit',
-            'laporan-delete'
+            'laporan-delete',
+            'permission-list',
+            'permission-delete',
+            'permission-edit',
+            'permission-create'
         ];
 
         foreach($permissions as $permission){
