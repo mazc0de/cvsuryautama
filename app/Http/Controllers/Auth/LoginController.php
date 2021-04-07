@@ -16,6 +16,11 @@ class LoginController extends Controller
     // protected $redirectTo = RouteServiceProvider::HOME;
     protected $redirectTo = '/admin/dashboard';
 
+    public function username()
+    {
+        return 'username';
+    }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -26,8 +31,4 @@ class LoginController extends Controller
         return redirect('/login');
     }
 
-    public function username()
-    {
-        return 'username';
-    }
 }
