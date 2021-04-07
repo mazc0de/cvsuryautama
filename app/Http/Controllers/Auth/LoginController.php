@@ -21,23 +21,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    // public function authenticate(Request $request){
-    //     // Inputan yg diambil
-    //     $credentials = $request->only('username', 'password');
-
-    //     if (Auth::attempt($credentials)) {
-    //         // Jika berhasil login
-
-    //         return redirect()->route('dashboard');
-
-    //         //return redirect()->intended('/details');
-    //     }
-    //     // Jika Gagal
-    //     return redirect('login');
-    // }
-
     public function logout(){
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function username()
+    {
+        return 'username';
     }
 }
