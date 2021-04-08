@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Database\Seeders\PermissionTableSeeder;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 
@@ -56,11 +57,9 @@ class PermissionController extends Controller
         $permission = Permission::find($id);
         $permission->update($data);
         return redirect()->route('permission.index')->with('success', 'Permission berhasil diedit!');
-        
     }
 
     public function destroy($id){
-
         Permission::find($id)->delete();
         return redirect()->route('permission.index')->with('delete', 'Permission berhasil dihapus!');
     }

@@ -41,7 +41,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($permissions as $permission)  
+                                    @foreach ($permissions as $permission)
                                         <tr>
                                             <td>
                                                 {{$loop->iteration}}
@@ -54,16 +54,10 @@
                                             </td>
                                             <td>
                                                 <a href="{{ route('permission.edit', $permission)}}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
-                                                <button class="btn btn-sm btn-danger trigger--fire-modal-7"
-                                                        data-confirm="Konfirmasi|Apakah anda yakin akan menghapus permission <b>{{$permission->name}}</b>?"
-                                                        data-confirm-yes="window.location.href='{{ route('permission.delete', $permission)}}'">
-                                                        Delete
-                                                    </button>
+                                                <a class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin akan menghapus {{ $permission->name }} ?')" href="{{route('permission.delete', $permission)}}"><i class="fa fa-trash"></i>Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
-        
-        
                                 </tbody>
                             </table>
                         </div>
@@ -76,6 +70,4 @@
         </div>
     </div>
 </section>
-
-
 @endsection
