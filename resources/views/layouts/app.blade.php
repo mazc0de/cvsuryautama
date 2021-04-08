@@ -52,7 +52,6 @@
 
 </body>
 @yield('js_zoom')
-
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -62,8 +61,9 @@
 @stack('datatables-js')
 @stack('datepicker-js')
 
+<!-- @stack('swal-js') -->
 
- <script src="{{ asset('web/js/stisla.js') }}"></script>
+<script src="{{ asset('web/js/stisla.js') }}"></script>
 <script src="{{ asset('web/js/scripts.js') }}"></script>
 <script src="{{ mix('assets/js/profile.js') }}"></script>
 <script src="{{ mix('assets/js/custom/custom.js') }}"></script> 
@@ -72,20 +72,5 @@
 @yield('page_js')
 @yield('scripts')
 
-<script>
-    let loggedInUser =@json(\Illuminate\Support\Facades\Auth::user());
-    let loginUrl = '{{ route('login') }}';
-    // Loading button plugin (removed from BS4)
-    (function ($) {
-        $.fn.button = function (action) {
-            if (action === 'loading' && this.data('loading-text')) {
-                this.data('original-text', this.html()).html(this.data('loading-text')).prop('disabled', true);
-            }
-            if (action === 'reset' && this.data('original-text')) {
-                this.html(this.data('original-text')).prop('disabled', false);
-            }
-        };
-    }(jQuery));
-</script>
-
+<!-- @stack('swal-jquery') -->
 </html>
