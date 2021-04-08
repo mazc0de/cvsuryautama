@@ -31,7 +31,7 @@
             <ul class="nav navbar-nav navbar-light" id="mainNav">
               <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
               <li><a href="#aboutUs" class="scroll-link">About</a></li>
-              <li><a href="#service" class="scroll-link">Register</a></li>
+              <li><a href="#service" class="scroll-link">Services</a></li>
               <li><a href="#Portfolio" class="scroll-link">Dokumentasi</a></li>
               <li><a href="#clients" class="scroll-link">Clients</a></li>
               <li><a href="#team" class="scroll-link">Team</a></li>
