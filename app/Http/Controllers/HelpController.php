@@ -34,20 +34,16 @@ class HelpController extends Controller
         $ext = $request->file('images')->getClientOriginalExtension();
         $title =$request->input('title') . "-" . $userid . "." . $ext;
         $title2 = str_replace(' ', '-', $title);
-
+        // dd($title2);
+        $request->file('images')->storeAs('public/helpdesk', $title2);
         Helpdesk::create([
             'user_id' => $userid,
             'category' => $request->category,
             'title' => $request->title,
             'description' => $request->description,
-            'images' => $request->file('images')->storeAs('images/helpdesk', $title2),
+            'images' => $title2,
         ]);
 
         return redirect()->route('help.submit')->with('success', 'Tiket anda telah berhasil terkirim, tim IT akan segera memprosesnya');
-    }
-
-    public function getImage($images){
-        $path = storage_path('app/images/helpdesk'. $images);
-        // dd($path);
     }
 }
