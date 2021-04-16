@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <div class="card-header">
                             <div class="card-header-action">
-                                <a href="{{ route('roles.index')}}" class="btn btn-primary"><i class="fas fa-chevron-left"></i> Back</a>
+                                <a href="{{ route('help.index')}}" class="btn btn-primary"><i class="fas fa-chevron-left"></i> Back</a>
                             </div>
                         </div>
                         <div class="card-body">

@@ -35,7 +35,7 @@
                     <div class="card-header">
                         <h4></h4>
                         <div class="card-header-action">
-                            <a href="{{ route('roles.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Role</a>
+                            <a href="{{ route('help.submit')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Ticket</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -61,13 +61,13 @@
                                             <td>{{$item->title}}</td>
                                             <td style="width: 40%;">{{$item->description}}</td>
                                             <td>
-                                                <a href="{{ asset('storage/'.$item->images) }}" target="_blank">
-                                                    <img src="{{ asset('storage/'.$item->images) }}" alt="" srcset="" width="100px">
+                                                <a href="{{ asset('storage/helpdesk/'.$item->images) }}" target="_blank">
+                                                    <img src="{{ asset('storage/helpdesk/'.$item->images) }}" alt="{{$item->title}}" srcset="" width="100px">
                                                 </a>
                                             </td>
                                             {{-- <td>
                                                 <div class="gallery-item" data-image="{{ asset('storage/'.$item->images) }}" data-title="Image 1" href="{{ asset('storage/'.$item->images) }}" title="Image 1" style="background-image: url(&quot;{{ asset('storage/'.$item->images) }}&quot;);"></div>
-                                                <img src="{{ asset('storage/'.$item->images) }}" alt="" srcset="" width="50px"></td> --}}
+                                                <img src="{{ asset('storage/'.$item->images) }}" alt="{{ asset('storage/'.$item->images) }}" srcset="" width="50px"></td> --}}
                                             <td>
                                                 <span class="badge badge-info mt-1"><i class="fas fa-shield-alt"></i> {{$item->status}}</span>
                                                 <br>
