@@ -34,8 +34,9 @@ class HelpController extends Controller
         $ext = $request->file('images')->getClientOriginalExtension();
         $title =$request->input('title') . "-" . $userid . "." . $ext;
         $title2 = str_replace(' ', '-', $title);
-        // dd($title2);
+
         $request->file('images')->storeAs('public/helpdesk', $title2);
+        
         Helpdesk::create([
             'user_id' => $userid,
             'category' => $request->category,
