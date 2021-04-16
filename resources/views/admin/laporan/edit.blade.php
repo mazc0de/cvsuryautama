@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="Upload">Upload</label>
-                                <input type="file" name="upload" class="form-control">
+                                <input type="file" name="upload" class="form-control" required>
                                 @error('upload')
                                     <div class="mt-2 text-danger">{{ $message }}</div>
                                 @enderror
